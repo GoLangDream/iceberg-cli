@@ -1,0 +1,57 @@
+package main
+
+import (
+	"github.com/GoLangDream/iceberg-cli/iceberg/commands"
+	"github.com/GoLangDream/iceberg-cli/iceberg/commands/db"
+	"github.com/GoLangDream/iceberg-cli/iceberg/commands/generate"
+	"github.com/GoLangDream/iceberg-cli/iceberg/project"
+	"github.com/urfave/cli/v2"
+	"log"
+	"os"
+)
+
+func main() {
+	project.Init()
+
+	app := &cli.App{
+		Name:  "iceberg",
+		Usage: "iceberg 命令行工具",
+		Commands: []*cli.Command{
+			{
+				Name:      "new",
+				Usage:     "创建项目",
+				ArgsUsage: "NAME",
+				Action:    commands.NewProject,
+			},
+			{
+				Name:   "db:migrate",
+				Usage:  "迁移数据库",
+				Action: db.Migrate,
+			},
+			{
+				Name:   "db:rollback",
+				Usage:  "回滚数据迁移",
+				Action: db.Rollback,
+			},
+			{
+				Name:    "generate",
+				Aliases: []string{"g"},
+				Usage:   "生成新的代码",
+				Subcommands: []*cli.Command{
+					{
+						Name:      "migration",
+						Aliases:   []string{"m"},
+						Usage:     "创建一个数据库迁移任务",
+						ArgsUsage: "NAME",
+						Action:    generate.Migration,
+					},
+				},
+			},
+		},
+	}
+
+	err := app.Run(os.Args)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
