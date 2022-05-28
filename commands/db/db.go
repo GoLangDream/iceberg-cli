@@ -33,9 +33,11 @@ func golangMigrate() *migrate.Migrate {
 		databaseUrl,
 	)
 	if err != nil {
-		helper.ErrorPuts("连接数据库失败, 请确认数据库配置正确 %s", err)
+		helper.ErrorPuts("连接数据库失败", "请确认数据库配置正确 %s", err)
 		os.Exit(0)
 	}
+
+	m.Log = &helper.MigrationLogger{}
 
 	_golangMigrate = m
 	return _golangMigrate

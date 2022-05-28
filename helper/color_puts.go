@@ -2,10 +2,12 @@ package helper
 
 import "github.com/gookit/color"
 
-func SuccessPuts(format string, a ...any) {
-	color.Green.Printf(format+"\n", a...)
+func SuccessPuts(tip, format string, v ...any) {
+	color.Green.Printf("    [" + tip + "]    ")
+	color.Printf(format+"\n", v...)
 }
 
-func ErrorPuts(format string, a ...any) {
-	color.Red.Printf(format+"\n", a...)
+func ErrorPuts(tip, format string, b ...any) {
+	color.Red.Printf("    [" + tip + "]    ")
+	color.Printf(format+"\n", b...)
 }

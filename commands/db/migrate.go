@@ -1,8 +1,14 @@
 package db
 
-import "github.com/urfave/cli/v2"
+import (
+	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
+	"github.com/urfave/cli/v2"
+)
 
 func Migrate(c *cli.Context) error {
-	golangMigrate().Up()
+	err := golangMigrate().Up()
+	if err != nil {
+		helper.ErrorPuts("数据库迁移失败", " %s", err.Error())
+	}
 	return nil
 }
