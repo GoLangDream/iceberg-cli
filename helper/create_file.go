@@ -9,8 +9,8 @@ func CreateFile(name string, content ...string) {
 			file.WriteString(content[0])
 		}
 		file.Close()
-		SuccessPuts("创建文件成功", "%s", name)
+		SuccessPuts("create", "%s", name)
 	} else {
-		ErrorPuts("创建文件失败", "%s 文件已存在 ", name)
+		ErrorPuts("create", "%s 文件已存在 ", name)
 	}
 }
