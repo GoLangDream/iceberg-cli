@@ -4,7 +4,6 @@ import (
 	"github.com/GoLangDream/iceberg-cli/iceberg/commands"
 	"github.com/GoLangDream/iceberg-cli/iceberg/commands/db"
 	"github.com/GoLangDream/iceberg-cli/iceberg/commands/generate"
-	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
 	"github.com/GoLangDream/iceberg-cli/iceberg/project"
 	"github.com/urfave/cli/v2"
 	"log"
@@ -73,6 +72,4 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	helper.RunCmd("go", "fmt", "./...")
 }

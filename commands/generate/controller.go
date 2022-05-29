@@ -32,6 +32,8 @@ func createController(name string, actions ...string) {
 	for _, action := range actions {
 		createView(controllerName, action)
 	}
+
+	helper.RunCmd("go", "fmt", "./...")
 }
 
 func createView(controller, action string) {

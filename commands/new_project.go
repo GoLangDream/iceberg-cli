@@ -36,6 +36,7 @@ func createProject() {
 	}
 	templates.CreateDirs(createFile, createDir)
 	initGoMod()
+	helper.RunCmd("go", "fmt", "./...")
 }
 
 func initGoMod() {

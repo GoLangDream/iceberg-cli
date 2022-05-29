@@ -39,6 +39,8 @@ func createModel(name string, columns ...string) {
 			"columns":    columnInfos,
 		},
 	)
+
+	helper.RunCmd("go", "fmt", "./...")
 }
 
 func getColumnInfo(str string) ColumnInfo {
