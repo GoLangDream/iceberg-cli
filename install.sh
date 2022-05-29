@@ -2,7 +2,7 @@
 
 cd /tmp
 
-git clone https://github.com/GoLangDream/iceberg-cli
+git clone --depth=1 https://github.com/GoLangDream/iceberg-cli
 cd iceberg-cli
 
 go mod tidy
