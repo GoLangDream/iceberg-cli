@@ -1,0 +1,7 @@
+package models
+
+type {{class_name}} struct {
+    {%- for column in columns %}
+    {{column.Name}} {{column.CType}}
+    {%- endfor %}
+}

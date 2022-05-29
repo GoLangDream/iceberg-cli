@@ -4,6 +4,7 @@ import (
 	"github.com/GoLangDream/iceberg-cli/iceberg/commands"
 	"github.com/GoLangDream/iceberg-cli/iceberg/commands/db"
 	"github.com/GoLangDream/iceberg-cli/iceberg/commands/generate"
+	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
 	"github.com/GoLangDream/iceberg-cli/iceberg/project"
 	"github.com/urfave/cli/v2"
 	"log"
@@ -57,6 +58,12 @@ func main() {
 						ArgsUsage: "NAME ACTION...",
 						Action:    generate.Controller,
 					},
+					{
+						Name:      "model",
+						Usage:     "创建一个model",
+						ArgsUsage: "NAME COLUMN:TYPE",
+						Action:    generate.Model,
+					},
 				},
 			},
 		},
@@ -66,4 +73,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	helper.RunCmd("go", "fmt", "./...")
 }
