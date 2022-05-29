@@ -1,6 +1,9 @@
 package helper
 
-import "os"
+import (
+	"github.com/flosch/pongo2/v5"
+	"os"
+)
 
 func CreateFile(name string, content ...string) {
 	if _, err := os.Stat(name); os.IsNotExist(err) {
@@ -13,4 +16,16 @@ func CreateFile(name string, content ...string) {
 	} else {
 		ErrorPuts("create", "%s 文件已存在 ", name)
 	}
+}
+
+func CreateFileFromTmpl(tmplContent, targetPath string, ctx pongo2.Context) {
+	tmpl, err := pongo2.FromString(tmplContent)
+	if err != nil {
+		ErrorPuts("create", "%s\n            %s\n", targetPath, err.Error())
+	}
+	fileContent, err := tmpl.Execute(ctx)
+	if err != nil {
+		ErrorPuts("create", "%s\n            %s\n", targetPath, err.Error())
+	}
+	CreateFile(targetPath, fileContent)
 }

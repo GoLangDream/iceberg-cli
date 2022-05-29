@@ -1,0 +1,19 @@
+package initializers
+
+import (
+	iceberg "github.com/GoLangDream/iceberg/web"
+	"os"
+	"{{project_name}}/web"
+)
+
+type {{class_name}}ApplicationConfig struct {
+}
+
+func (app *{{class_name}}ApplicationConfig) HomePath() string {
+	path, _ := os.Getwd()
+	return path
+}
+
+func (app *{{class_name}}ApplicationConfig) RouterDraw() func(r *iceberg.Router) {
+	return web.RouterDraw
+}
