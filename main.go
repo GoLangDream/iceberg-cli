@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/GoLangDream/iceberg-cli/iceberg/commands"
-	"github.com/GoLangDream/iceberg-cli/iceberg/commands/db"
-	"github.com/GoLangDream/iceberg-cli/iceberg/commands/generate"
-	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
-	"github.com/GoLangDream/iceberg-cli/iceberg/project"
+	"github.com/GoLangDream/iceberg-cli/commands"
+	"github.com/GoLangDream/iceberg-cli/commands/db"
+	"github.com/GoLangDream/iceberg-cli/commands/generate"
+	"github.com/GoLangDream/iceberg-cli/helper"
+	"github.com/GoLangDream/iceberg-cli/project"
 	"github.com/urfave/cli/v2"
 	"log"
 	"os"

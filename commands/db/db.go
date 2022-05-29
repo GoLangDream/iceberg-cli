@@ -2,8 +2,8 @@ package db
 
 import (
 	"fmt"
-	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
-	"github.com/GoLangDream/iceberg-cli/iceberg/project"
+	"github.com/GoLangDream/iceberg-cli/helper"
+	"github.com/GoLangDream/iceberg-cli/project"
 	"github.com/golang-migrate/migrate/v4"
 	_ "github.com/golang-migrate/migrate/v4/database/mysql"
 	_ "github.com/golang-migrate/migrate/v4/source/file"

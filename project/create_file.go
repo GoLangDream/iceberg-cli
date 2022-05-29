@@ -1,7 +1,7 @@
 package project
 
 import (
-	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
+	"github.com/GoLangDream/iceberg-cli/helper"
 )
 
 func CreateFile(filePath string, content ...string) {

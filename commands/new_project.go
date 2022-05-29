@@ -2,8 +2,8 @@ package commands
 
 import (
 	_ "embed"
-	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
-	"github.com/GoLangDream/iceberg-cli/iceberg/templates"
+	"github.com/GoLangDream/iceberg-cli/helper"
+	"github.com/GoLangDream/iceberg-cli/templates"
 	"github.com/GoLangDream/rgo/rstring"
 	"github.com/flosch/pongo2/v5"
 	"github.com/urfave/cli/v2"
