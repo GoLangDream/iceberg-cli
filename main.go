@@ -24,6 +24,11 @@ func main() {
 				Action:    commands.NewProject,
 			},
 			{
+				Name:   "run",
+				Usage:  "启动程序",
+				Action: commands.RunProject,
+			},
+			{
 				Name:   "db:migrate",
 				Usage:  "迁移数据库",
 				Action: db.Migrate,
