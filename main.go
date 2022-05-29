@@ -50,6 +50,13 @@ func main() {
 						ArgsUsage: "NAME",
 						Action:    generate.Migration,
 					},
+					{
+						Name:      "controller",
+						Aliases:   []string{"c"},
+						Usage:     "创建一个controller",
+						ArgsUsage: "NAME ACTION...",
+						Action:    generate.Controller,
+					},
 				},
 			},
 		},

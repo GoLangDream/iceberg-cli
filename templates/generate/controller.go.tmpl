@@ -1,0 +1,19 @@
+package controllers
+
+import (
+	"github.com/GoLangDream/iceberg/web"
+)
+
+func init() {
+	web.RegisterController({{class_name}}Controller{})
+}
+
+type {{class_name}}Controller struct {
+	*web.BaseController
+}
+
+{%- for action in actions %}
+func (c *{{class_name}}Controller) {{action|camelize}}() {
+
+}
+{%- endfor %}
