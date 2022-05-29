@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/GoLangDream/iceberg-cli/helper"
+	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
 	"github.com/urfave/cli/v2"
 )
 

@@ -2,7 +2,7 @@ package generate
 
 import (
 	"fmt"
-	"github.com/GoLangDream/iceberg-cli/project"
+	"github.com/GoLangDream/iceberg-cli/iceberg/project"
 	"github.com/urfave/cli/v2"
 	"path/filepath"
 	"time"

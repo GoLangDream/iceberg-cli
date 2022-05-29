@@ -1,4 +1,4 @@
-module github.com/GoLangDream/iceberg-cli
+module github.com/GoLangDream/iceberg-cli/iceberg
 
 go 1.18
 
