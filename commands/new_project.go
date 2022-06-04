@@ -41,7 +41,7 @@ func createProject() {
 
 func initGoMod() {
 	helper.RunCmd("go", "mod", "init", projectName)
-	helper.RunCmd("go", "get", "github.com/GoLangDream/iceberg")
+	helper.RunCmd("go", "get", "github.com/GoLangDream/iceberg@latest")
 	helper.RunCmd("go", "mod", "tidy")
 
 	helper.RunCmd("go", "install", "github.com/cosmtrek/air@latest")

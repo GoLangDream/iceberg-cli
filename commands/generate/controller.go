@@ -41,7 +41,7 @@ func createView(controller, action string) {
 	helper.MkDir(filepath.Join("web/views", controller))
 	helper.CreateFileFromTmpl(
 		templates.ViewTmpl(),
-		fmt.Sprintf("web/views/%s/%s.html", controller, actionName),
+		fmt.Sprintf("web/views/%s/%s.pug", controller, actionName),
 		pongo2.Context{
 			"controller_name": controller,
 			"action":          action,
