@@ -2,10 +2,10 @@ package main
 
 import (
 	"github.com/GoLangDream/iceberg"
-	"{{project_name}}/initializers"
+	_ "{{project_name}}/initializers"
 )
 
 func main() {
-	iceberg.InitApplication(&initializers.{{class_name}}ApplicationConfig{})
+	iceberg.InitApplication()
 	iceberg.StartApplication()
 }

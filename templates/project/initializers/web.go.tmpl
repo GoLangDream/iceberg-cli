@@ -1,5 +1,11 @@
 package initializers
 
 import (
+	iceberg "github.com/GoLangDream/iceberg/web"
+	"{{project_name}}/web"
 	_ "{{project_name}}/web/controllers"
 )
+
+func init() {
+	iceberg.RouterDraw = web.RouterDraw
+}
