@@ -3,7 +3,7 @@ iceberg 框架的命令行工具
 
 ## install
 
-项目以来 Git 和 Golang, 请先安装好这两个工具
+项目依赖 Git 和 Golang, 请先安装好这两个工具，并配置好 GOPATH, 以及把GOPATH加入 PATH
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/GoLangDream/iceberg-cli/main/install.sh)"
