@@ -3,9 +3,14 @@ package main
 import (
 	"github.com/GoLangDream/iceberg"
 	_ "{{project_name}}/initializers"
+	"io/ioutil"
+	"os"
+	"strconv"
 )
 
 func main() {
+	pid := os.Getpid()
+	ioutil.WriteFile("application.pid", []byte(strconv.Itoa(pid)), 0644)
 	iceberg.InitApplication()
 	iceberg.StartApplication()
 }
