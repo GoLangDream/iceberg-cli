@@ -2,6 +2,7 @@ package db
 
 import (
 	"fmt"
+	"github.com/GoLangDream/iceberg-cli/iceberg/environment"
 	"github.com/GoLangDream/iceberg-cli/iceberg/helper"
 	"github.com/GoLangDream/iceberg-cli/iceberg/project"
 	"github.com/golang-migrate/migrate/v4"
@@ -20,12 +21,12 @@ func golangMigrate() *migrate.Migrate {
 
 	databaseUrl := fmt.Sprintf(
 		"mysql://%s:%s@tcp(%s:%s)/%s?charset=%s&parseTime=True&loc=Local",
-		config.String("database.username"),
-		config.String("database.password"),
-		config.String("database.host"),
-		config.String("database.port"),
-		config.String("database.name"),
-		config.String("database.encoding"),
+		config.String(keyWithEnv("database.%s.username")),
+		config.String(keyWithEnv("database.%s.password")),
+		config.String(keyWithEnv("database.%s.host")),
+		config.String(keyWithEnv("database.%s.port")),
+		config.String(keyWithEnv("database.%s.name")),
+		config.String(keyWithEnv("database.%s.encoding")),
 	)
 
 	m, err := migrate.New(
@@ -41,4 +42,8 @@ func golangMigrate() *migrate.Migrate {
 
 	_golangMigrate = m
 	return _golangMigrate
+}
+
+func keyWithEnv(format string) string {
+	return fmt.Sprintf(format, environment.Name())
 }
