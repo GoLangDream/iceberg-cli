@@ -12,3 +12,10 @@ func MkDir(name string) {
 		ErrorPuts("create", "%s 文件已存在 ", name)
 	}
 }
+
+func MkDirIfNotExists(name string) {
+	if _, err := os.Stat(name); os.IsNotExist(err) {
+		os.MkdirAll(name, os.ModePerm)
+		SuccessPuts("create", "%s", name)
+	}
+}
